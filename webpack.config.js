@@ -20,8 +20,8 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
-    filename: "client.min.js"
+    path: __dirname + "/docs/",
+    filename: "app.min.js"
   },
   devServer : {
     contentBase : './src'
