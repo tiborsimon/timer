@@ -1,0 +1,52 @@
+$gray-color: #ddd
+$font-color: #666
+$light-font-color: #777
+$maximal-width: 550px
+$minimal-width: 450px
+
+body
+  background: #333 url(asset/background-pattern.png)
+  padding: 30px
+  -webkit-font-smoothing: antialiased
+  font-weight: 300
+  line-height: 1em
+  color: $font-color
+.timer
+  margin: 0px auto 20px
+  padding: 30px 14px 14px
+  box-shadow: 0px 34px 30px -30px rgba(0, 0, 0, 0.9)
+  background: white
+  border-radius: 10px
+  border: solid 1px #eee
+  max-width: $maximal-width
+  min-width: $minimal-width
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  h1
+    font-family: 'Kreon', serif
+    font-weight: 300
+    strong
+      font-weight: 600
+  hr
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0))
+    width: 300px
+    height: 1px
+    border: none
+
+footer
+  text-align: center
+  font-size: 0.8em
+  color: $light-font-color
+  max-width: $maximal-width
+  min-width: $minimal-width
+  margin: 0px auto
+  p
+    margin: 0
+    padding: 0
+    strong
+      font-weight: 700
+    a
+      text-decoration: none
+      color: $light-font-color
