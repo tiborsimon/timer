@@ -21,12 +21,16 @@ css:
 		$(NODE)node-sass ./src/site/sass/site.sass; \
 	} | \
 	$(NODE)postcss --use autoprefixer | \
-	$(NODE)cleancss -o docs/site.min.css
+	$(NODE)cleancss | \
+	sed "s#/\*.*\*/##g" > docs/site.min.css
 
 asset:
 	@echo "Copying assets.."
 	@cp ./src/site/asset/* ./$(OUTPUT)/asset/
 
-html:
+html: css
 	@echo "Minifying html files.."
-	@$(NODE)html-minifier --collapse-whitespace -o ./$(OUTPUT)/index.html ./src/site/index.html
+	@sed 's?CSS?$(shell cat $(OUTPUT)/site.min.css)?' ./src/site/index.html | \
+	sed 's?JS?$(shell cat ./src/site/js/site.js | $(NODE)uglifyjs)?' | \
+	$(NODE)html-minifier --collapse-whitespace -o ./$(OUTPUT)/index.html
+	@rm -rf $(OUTPUT)/site.min.css

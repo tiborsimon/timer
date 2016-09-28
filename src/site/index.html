@@ -7,7 +7,9 @@
   <meta name="description" content="Timer application.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tibor Simon">
-  <link href="site.min.css" rel="stylesheet">
+  <style>
+    CSS
+  </style>
   <link href="https://fonts.googleapis.com/css?family=Kreon:400,700" rel="stylesheet">
 </head>
 
@@ -24,25 +26,7 @@
 		<p>This application is licensed under the <strong> <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license.</a></strong></p>
 		<p>Copyright (c) 2016 Tibor Simon</p>
 	</footer>
-  <script>
-    function loaderDone(event) {
-      document.getElementById("loader").style.opacity = 0;
-      setTimeout(function(){
-        document.getElementById("timer").style.marginTop = 0;
-        var loaderDiv = document.getElementById("page-loader");
-        loaderDiv.style.opacity = 0;
-        setTimeout(function(){
-          loaderDiv.style.display = "none";
-        }, 800);
-      }, 300);
-    }
-    var interval = setInterval(function() {
-      if(document.readyState === 'complete') {
-        clearInterval(interval);
-        loaderDone();
-      }
-    }, 100);
-  </script>
+  <script>JS</script>
   <script src="app.min.js"></script>
 </body>
 </html>
