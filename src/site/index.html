@@ -5,16 +5,17 @@
   <meta charset="utf-8">
   <title>Ultimate Timer</title>
   <meta name="description" content="Timer application.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Tibor Simon">
   <link href="site.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kreon:400,700" rel="stylesheet">
 </head>
 
-<body onLoad='fireLoader'>
+<body>
   <div id="page-loader">
     <div id="loader">Loading...</div>
   </div>
-	<div class="timer">
+	<div id="timer">
 		<h1>Ultimate<strong>Timer</strong></h1>
 		<hr/>
 	</div>
@@ -24,13 +25,23 @@
 		<p>Copyright (c) 2016 Tibor Simon</p>
 	</footer>
   <script>
-    document.body.onload = function() {
+    function loaderDone(event) {
       document.getElementById("loader").style.opacity = 0;
       setTimeout(function(){
-        document.getElementById("page-loader").style.opacity = 0;
-      }, 100);
-      console.log("helloka");
+        document.getElementById("timer").style.marginTop = 0;
+        var loaderDiv = document.getElementById("page-loader");
+        loaderDiv.style.opacity = 0;
+        setTimeout(function(){
+          loaderDiv.style.display = "none";
+        }, 800);
+      }, 300);
     }
+    var interval = setInterval(function() {
+      if(document.readyState === 'complete') {
+        clearInterval(interval);
+        loaderDone();
+      }
+    }, 100);
   </script>
   <script src="app.min.js"></script>
 </body>
