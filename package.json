@@ -18,12 +18,15 @@
     "style-loader": "^0.13.1"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.0",
     "chai": "^3.5.0",
     "clean-css": "^3.4.20",
     "file-loader": "^0.9.0",
+    "html-minifier": "^3.1.0",
     "mocha": "^3.0.2",
     "node-sass": "^3.10.0",
     "normalize.css": "^4.2.0",
+    "postcss-cli": "^2.6.0",
     "sass-loader": "^4.0.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
@@ -32,7 +35,12 @@
     "dev": "webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf docs/*",
-    "site-css": "{ cat ./node_modules/normalize.css/normalize.css && node-sass ./src/site/sass/site.sass; } | cleancss -o docs/site.min.css"
+    "dirs": "mkdir docs/css && mkdir docs/asset && mkdir docs/js",
+    "css": "{ cat ./node_modules/normalize.css/normalize.css && node-sass ./src/site/sass/site.sass; } | cleancss -o docs/site.min.css",
+    "html": "html-minifier --collapse-whitespace -o ./docs/index.html ./src/site/index.html",
+    "asset": "cp ./src/site/asset/* ./docs/asset/",
+    "prebuild": "npm run clean && npm run dirs",
+    "build": "npm run css & npm run html & npm run asset"
   },
   "repository": {
     "type": "git",

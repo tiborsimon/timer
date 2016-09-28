@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ultimate Timer</title><meta name="description" content="Timer application."><meta name="author" content="Tibor Simon"><link href="site.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Kreon:400,700" rel="stylesheet"></head><body onload="fireLoader"><div id="page-loader"><div id="loader">Loading...</div></div><div class="timer"><h1>Ultimate<strong>Timer</strong></h1><hr></div><footer><p>Created by <strong>Tibor Simon </strong>as his first <strong>React powered </strong>web application.</p><p>This application is licensed under the <strong><a href="https://opensource.org/licenses/MIT" target="_blank">MIT license.</a></strong></p><p>Copyright (c) 2016 Tibor Simon</p></footer><script>document.body.onload = function() {
+      document.getElementById("loader").style.opacity = 0;
+      setTimeout(function(){
+        document.getElementById("page-loader").style.opacity = 0;
+      }, 100);
+      console.log("helloka");
+    }</script><script src="app.min.js"></script></body></html>
