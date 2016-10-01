@@ -1,0 +1,6 @@
+* 2016-10-01 11:44:13
+Yepp, it works :) The next step is to inline the font file with base64..
+* 2016-10-01 11:39:16
+Im am going to start recording the steps I made during the develeopment.
+I removed all font types but woff. According to https://css-tricks.com/snippets/css/using-font-face/
+and http://caniuse.com/#feat=woff, that will be the future supported format.
