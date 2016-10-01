@@ -1,9 +1,9 @@
 OUTPUT:=docs
 NODE:=./node_modules/.bin/
 
-.PHONY: all clean css asset html
+.PHONY: all clean css asset html webpack
 
-all: clean css asset html
+all: clean css asset html webpack
 	@echo "Done"
 
 clean:
@@ -35,3 +35,7 @@ html: css
 	sed 's?JS?$(shell cat ./src/site/js/site-loader.js | $(NODE)uglifyjs)?' | \
 	$(NODE)html-minifier --collapse-whitespace -o ./$(OUTPUT)/index.html
 	@rm -rf $(OUTPUT)/site.min.css
+
+webpack:
+	@echo "Compiling app with webpack.."
+	@$(NODE)webpack

@@ -1,3 +1,7 @@
-require('file?name=[name].[ext]!../index.html');
-require('!style!css!sass!../sass/style.sass');
-console.log('hello');
+import React from "react";
+import ReactDOM from "react-dom";
+
+import Timer from "./components/Timer"
+
+const app = document.getElementById('app');
+ReactDOM.render(<Timer/>, app);
