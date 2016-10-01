@@ -3,7 +3,7 @@ $highlight-font: white
 $gray-color: #ddd
 $font-color: #666
 $button-color: #ddd
-$light-font-color: #777
+$light-font-color: #555
 $indicator-font-color: #ddd
 $maximal-width: 550px
 $minimal-width: 450px
@@ -23,17 +23,6 @@ $minimal-width: 450px
   text-transform: none
   line-height: 1
 
-.icon-spinner:before
-  content: "\\e981"
-.icon-checkmark:before
-  content: "\\ea10"
-.icon-pause:before
-  content: "\\ea1d"
-.icon-share:before
-  content: "\\ea82"
-.icon-github:before
-  content: "\\eab0"
-
 html, body
 	height: 100%
 body
@@ -44,6 +33,9 @@ body
 	font-weight: 300
 	line-height: 1em
 	color: $font-color
+
+a
+  text-decoration: none
 
 #page-loader
 	display: block
@@ -176,7 +168,25 @@ footer
 		padding: 0
 		strong
 			font-weight: 700
-		a
-			text-decoration: none
-			color: $light-font-color
+  a
+    color: $light-font-color
+.icons
+  margin-top: 10px
+  flex-direction: row
+  display: flex
+  align-items: center
+  justify-content: center
+  .icon
+    color: $light-font-color
+    margin: 0 6px
+    &.icon-spinner:before
+      content: "\\e981"
+    &.icon-checkmark:before
+      content: "\\ea10"
+    &.icon-pause:before
+      content: "\\ea1d"
+    &.icon-share:before
+      content: "\\ea82"
+    &.icon-github:before
+      content: "\\eab0"
 
