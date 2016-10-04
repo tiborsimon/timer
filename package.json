@@ -16,6 +16,9 @@
     "css-loader": "^0.25.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.6.1",
     "style-loader": "^0.13.1"
   },
   "devDependencies": {
@@ -32,7 +35,8 @@
     "sass-loader": "^4.0.2",
     "uglify-js": "^2.7.3",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "redux-devtools": "^3.3.1"
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",

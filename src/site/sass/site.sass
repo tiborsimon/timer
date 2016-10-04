@@ -69,7 +69,7 @@ a
 		100%
 			transform: rotate(360deg)
 
-#timer
+#timer-wrapper
 	margin: 9px auto 20px
 	transition: margin 0.8s
 	transition-timing-function: ease-out
@@ -94,67 +94,69 @@ a
 		width: 300px
 		height: 1px
 		border: none
-	.row
-    display: flex
-    flex-direction: row
-    align-items: stretch
-    width: 400px
+p
+  text-align: center
+.row
+  display: flex
+  flex-direction: row
+  align-items: stretch
+  width: 400px
+  height: 30px
+  margin-bottom: 10px
+  border: 1px solid $gray-color
+  border-radius: 10px
+  overflow: hidden
+  .indicator
     height: 30px
-    margin-bottom: 10px
-    border: 1px solid $gray-color
-    border-radius: 10px
-    overflow: hidden
-    .indicator
-      height: 30px
-      width: 30px
-      position: absolute
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      color: $indicator-font-color
-      font-size: 0.8em
-    .control-item
-      color: $font-color
-      width: 50%
-      outline: none
-      font-size: 1.2em
-      border: none
-      text-align: center
-      background-color: white
-      &.countdown
-        margin-top: 7px
-      &:first-child
-        border-radius: 5px 0 0 5px
-      &.paused
-        box-shadow: inset 0px 0px 10px 0px #E7EB8A
-      &.expired
-        background-color: #FAC8C8
-        color: red
-      &.half
-        width: 25%
-      &.time-input
-        &:focus
-          background: $highlight-color
-          border-color: $highlight-color
-          font-weight: 400
-          color: $highlight-font
-      &.button
-        background: $button-color
-        &:active
-          border-color: $highlight-color
-          background: $highlight-color
-          border-color: $highlight-color
-          color: $highlight-font
-          font-weight: 300
-        &:hover
-          font-weight: 400
-      &.time-input:focus + input.start-button:hover
+    width: 30px
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: $indicator-font-color
+    font-size: 0.8em
+  .control-item
+    color: $font-color
+    width: 50%
+    outline: none
+    font-size: 1.2em
+    border: none
+    text-align: center
+    background-color: white
+    &.countdown
+      margin-top: 7px
+    &:first-child
+      border-radius: 5px 0 0 5px
+    &.paused
+      box-shadow: inset 0px 0px 10px 0px #E7EB8A
+    &.expired
+      background-color: #FAC8C8
+      color: red
+    &.half
+      width: 25%
+    &.time-input
+      &:focus
+        background: $highlight-color
+        border-color: $highlight-color
+        font-weight: 400
+        color: $highlight-font
+    &.button
+      background: $button-color
+      &:active
         border-color: $highlight-color
         background: $highlight-color
         border-color: $highlight-color
         color: $highlight-font
+        font-weight: 300
+      &:hover
         font-weight: 400
+    &.time-input:focus + input.start-button:hover
+      border-color: $highlight-color
+      background: $highlight-color
+      border-color: $highlight-color
+      color: $highlight-font
+      font-weight: 400
 
 footer
 	text-align: center

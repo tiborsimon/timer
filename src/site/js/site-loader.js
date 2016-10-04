@@ -2,7 +2,7 @@
 function loaderDone(event) {
   document.getElementById("loader").style.opacity = 0;
   setTimeout(function(){
-    document.getElementById("timer").style.marginTop = 0;
+    document.getElementById("timer-wrapper").style.marginTop = 0;
     var loaderDiv = document.getElementById("page-loader");
     loaderDiv.style.opacity = 0;
     setTimeout(function(){
