@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 @connect(store => {
   return {
-    inputValue: store.timer.inputValue
+    timers: store.timer.inputValue
   }
 })
 export default class Input extends React.Component {

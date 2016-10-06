@@ -1,11 +1,9 @@
 import { combineReducers  } from "redux"
 
-import tweets from "./tweetsReducer"
-import user from "./userReducer"
+import timer from "./timer"
 
 const TimerApp =  combineReducers({
-  tweets,
-  user
+  timer,
 })
 
 export default TimerApp
