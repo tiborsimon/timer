@@ -1,25 +1,14 @@
 import React from "react";
 
 import Input from "./Timer/Input";
+import TimerList from "./Timer/TimerList";
 
-import { connect } from 'react-redux'
-
-
-@connect(store => {
-  return {
-    inputValue: store.timer.inputValue,
-    timers: store.timer.timers,
-  }
-})
 export default class Timer extends React.Component {
-  constructor() {
-    super();
-    this.state = {timers: []};
-  }
   render() {
     return (
       <div id="timer">
-        <Input />
+        <Input {...this.props} />
+        <TimerList {...this.props} />
       </div>
     );
   }

@@ -1,30 +1,14 @@
 import React from "react";
-import { inputChanged, createTimer } from '../../actions'
-import { connect } from 'react-redux'
+import TimerInstance from "./TimerList/TimerInstance"
 
-@connect(store => {
-  return {
-    timers: store.timer.inputValue
-  }
-})
-export default class Input extends React.Component {
-  inputChanged(e) {
-    const input = e.target.value
-    this.props.dispatch(inputChanged(input))
-  }
-
-  startTimer() {
-    this.props.dispatch(createTimer())
-  }
-
+export default class TimerList extends React.Component {
   render() {
     return (
-      <div class="input">
-        <p>Add a timer</p>
-        <div class="row">
-          <input onChange={this.inputChanged.bind(this)} class="control-item time-input" type="text" value={this.props.inputValue} />
-          <input onClick={this.startTimer.bind(this)} class="control-item button" type="submit" value="Start" />
-        </div>
+      <div class="timer-list">
+        <p>Timers</p>
+        {this.props.timer.timers.map(timer => (
+          <TimerInstance  timer={timer} pause={this.props.pauseTimer} resume={this.props.resumeTimer} delete={this.props.deleteTimer} key={timer.id} />
+        ))}
       </div>
     );
   }
