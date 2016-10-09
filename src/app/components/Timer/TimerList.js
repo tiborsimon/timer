@@ -4,7 +4,7 @@ import TimerInstance from "./TimerList/TimerInstance"
 export default class TimerList extends React.Component {
   render() {
     return (
-      <div class="timer-list">
+      <div>
       {(() => {
         if (this.props.timer.timers.length > 0) {
           return <p>Timers</p>

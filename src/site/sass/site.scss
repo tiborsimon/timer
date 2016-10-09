@@ -1,0 +1,176 @@
+$color-dark: #354D62;
+$color-faded-dark: #59748C;
+$color-faded-light: #718CA1;
+$color-light: #D7F2F7;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top,$color-dark,#062329 60%);
+  color: $color-light;
+  padding: 40px;
+  h1 {
+    font-weight: 300;
+    strong {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0px;
+  }
+}
+
+button, input {
+  width: 50%;
+  color: $color-dark;
+  background: $color-light;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+button {
+  border-left: 2px solid $color-dark;
+  background: $color-faded-light;
+  color: $color-dark;
+  line-height: 1.4em;
+}
+textarea:focus, input:focus{
+  outline: none;
+  //border: 2px solid coral;
+}
+button:hover {
+  background: $color-faded-dark;
+  color: $color-light;
+}
+button:active {
+  color: $color-faded-light;
+}
+
+
+#wrapper {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+  .timer {
+    box-sizing: border-box;
+    border: 6px solid $color-light;
+    background: $color-dark;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 20px 20px -14px rgba(0,0,0,0.7), inset 0 20px 80px -14px rgba(0,0,0,0.1);
+
+    .row {
+      position: relative;
+      background: $color-dark;
+      color: $color-light;
+      margin-bottom: 2px;
+      display: flex;
+      width: 100%;
+      height: 24px;
+      align-items: stretch;
+      justify-content: center;
+      border-radius: 1px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px -4px rgba(0, 0, 0, 0.2);
+      .display {
+        padding-top: 3px;
+        width: 50%;
+        background: $color-light;
+        color: $color-dark;
+      }
+      .half {
+        width: 25%;
+      }
+    }
+  }
+  hr {
+    border: none;
+    background: $color-faded-dark;
+    height: 1px;
+  }
+  footer {
+    font-weight: 300;
+    padding: 20px;
+    font-size: 10px;
+    color: $color-faded-dark;
+    p {
+      padding: 0;
+      margin: 0;
+      strong {
+        font-weight: 600;
+      }
+    }
+    a, strong {
+      text-decoration: none;
+      color: $color-faded-light;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.woff?7anle0') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.icons {
+  margin-top: 10px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.indicator {
+  margin: 0 !important;
+  color: $color-faded-light;
+  position: absolute;
+  color: $color-faded-light !important;
+  font-size: 0.8em;
+  top: 7px;
+  left: 7px;
+}
+.icon {
+  color: $color-faded-light;
+  margin: 0 6px;
+  &.icon-play:before {
+    content: "\\ea1c";
+  }
+  &.icon-done:before {
+    content: "\\ea10";
+  }
+  &.icon-pause:before {
+    content: "\\ea1d";
+  }
+  &.icon-share:before {
+    content: "\\ea82";
+  }
+  &.icon-github:before {
+    content: "\\eab0";
+  }
+  &.icon-books:before {
+    content: "\\e920";
+  }
+}

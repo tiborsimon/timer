@@ -18,7 +18,7 @@ css:
 	@echo "Building final css file.."
 	@{ \
 		cat ./node_modules/normalize.css/normalize.css && \
-		$(NODE)node-sass ./src/site/sass/site.sass; \
+		cat ./src/site/sass/*.scss | $(NODE)node-sass; \
 	} | \
 	$(NODE)postcss --use autoprefixer | \
 	$(NODE)cleancss | \

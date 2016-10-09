@@ -12,11 +12,11 @@ export default class Input extends React.Component {
 
   render() {
     return (
-      <div class="input">
+      <div>
         <p>Add a timer</p>
-        <div class="timer">
-          <input onChange={this.inputChanged.bind(this)} class="timer-part time-input" type="text" value={this.props.timer.inputValue} />
-          <input onClick={this.startTimer.bind(this)} class="timer-part button" type="submit" value="Start" />
+        <div class="row">
+          <input onChange={this.inputChanged.bind(this)} type="text" value={this.props.timer.inputValue} />
+          <button onClick={this.startTimer.bind(this)}>Start</button>
         </div>
       </div>
     );

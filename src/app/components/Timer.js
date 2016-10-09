@@ -6,7 +6,7 @@ import TimerList from "./Timer/TimerList";
 export default class Timer extends React.Component {
   render() {
     return (
-      <div id="timer">
+      <div>
         <Input {...this.props} />
         <TimerList {...this.props} />
       </div>
