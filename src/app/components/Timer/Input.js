@@ -14,9 +14,9 @@ export default class Input extends React.Component {
     return (
       <div class="input">
         <p>Add a timer</p>
-        <div class="row">
-          <input onChange={this.inputChanged.bind(this)} class="control-item time-input" type="text" value={this.props.timer.inputValue} />
-          <input onClick={this.startTimer.bind(this)} class="control-item button" type="submit" value="Start" />
+        <div class="timer">
+          <input onChange={this.inputChanged.bind(this)} class="timer-part time-input" type="text" value={this.props.timer.inputValue} />
+          <input onClick={this.startTimer.bind(this)} class="timer-part button" type="submit" value="Start" />
         </div>
       </div>
     );

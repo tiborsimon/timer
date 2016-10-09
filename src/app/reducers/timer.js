@@ -14,11 +14,11 @@ export default function timerReducer(state=initialState, action) {
       return {
         ...state,
         timers: [
-          ...state.timers, {
+          {
             id: action.id,
             value: state.inputValue,
             state: "RUNNING",
-          }
+          }, ...state.timers
         ]
       }
     }
@@ -35,6 +35,15 @@ export default function timerReducer(state=initialState, action) {
     case "DELETE_TIMER": {
       let temp = {...state}
       temp.timers = _.filter(temp.timers, o => o.id != action.id )
+      return temp
+    }
+    case "TICK": {
+      let temp = {...state}
+      let target = _.find(temp.timers, {'id': action.id})
+      target.value -= 1
+      if (target.value <= 0) {
+        target.state = "FINISHED"
+      }
       return temp
     }
   }

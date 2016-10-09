@@ -32,3 +32,10 @@ export function deleteTimer(id) {
     id,
   }
 }
+
+export function timerTick(id) {
+  return {
+    type: "TICK",
+    id,
+  }
+}

@@ -1,6 +1,21 @@
 import React from "react";
 
 export default class TimerInstance extends React.Component {
+  componentWillMount() {
+    this.tickHandler = setInterval(this.timerTick.bind(this), 1000)
+  }
+
+  timerTick() {
+    console.log('ticck')
+    if (this.props.timer.state == "RUNNING") {
+      this.props.tick(this.props.timer.id)
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.tickHandler)
+  }
+
   pauseTimer() {
     this.props.pause(this.props.timer.id)
   }
@@ -18,19 +33,27 @@ export default class TimerInstance extends React.Component {
     switch (timer.state) {
       case "RUNNING": {
         return (
-          <div class="row">
-            <div class="control-item countdown running"><i class="icon icon-spinner"></i>{timer.value}</div>
-            <button class="control-item button half" onClick={this.pauseTimer.bind(this)}>Pause</button>
-            <button class="control-item button half" onClick={this.deleteTimer.bind(this)}>Delete</button>
+          <div class="timer">
+            <i class="indicator icon icon-play"></i><div class="timer-part countdown running">{timer.value}</div>
+            <button class="timer-part button half" onClick={this.pauseTimer.bind(this)}>Pause</button>
+            <button class="timer-part button half" onClick={this.deleteTimer.bind(this)}>Delete</button>
           </div>
         )
       }
       case "PAUSED": {
         return (
-          <div class="row">
-            <div class="control-item countdown running"><i class="icon icon-pause"></i>{timer.value}</div>
-            <button class="control-item button half" onClick={this.resumeTimer.bind(this)}>Resume</button>
-            <button class="control-item button half" onClick={this.deleteTimer.bind(this)}>Delete</button>
+          <div class="timer">
+            <i class="indicator icon icon-pause"></i><div class="timer-part countdown running">{timer.value}</div>
+            <button class="timer-part button half" onClick={this.resumeTimer.bind(this)}>Resume</button>
+            <button class="timer-part button half" onClick={this.deleteTimer.bind(this)}>Delete</button>
+          </div>
+        )
+      }
+      case "FINISHED": {
+        return (
+          <div class="timer">
+            <i class="indicator icon icon-done"></i><div class="timer-part countdown running">{timer.value}</div>
+            <button class="timer-part button" onClick={this.deleteTimer.bind(this)}>Delete</button>
           </div>
         )
       }

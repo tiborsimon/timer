@@ -4,7 +4,7 @@ $gray-color: #ddd
 $font-color: #666
 $button-color: #ddd
 $light-font-color: #555
-$indicator-font-color: #d0d0d0
+$indicator-font-color: #ddd
 $maximal-width: 550px
 $minimal-width: 450px
 
@@ -96,8 +96,7 @@ a
 		border: none
 p
   text-align: center
-
-.timer
+.row
   display: flex
   flex-direction: row
   align-items: stretch
@@ -107,7 +106,17 @@ p
   border: 1px solid $gray-color
   border-radius: 10px
   overflow: hidden
-  .timer-part
+  .indicator
+    height: 30px
+    width: 30px
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: $indicator-font-color
+    font-size: 0.8em
+  .control-item
     color: $font-color
     width: 50%
     outline: none
@@ -119,6 +128,11 @@ p
       margin-top: 7px
     &:first-child
       border-radius: 5px 0 0 5px
+    &.paused
+      box-shadow: inset 0px 0px 10px 0px #E7EB8A
+    &.expired
+      background-color: #FAC8C8
+      color: red
     &.half
       width: 25%
     &.time-input
@@ -150,8 +164,7 @@ p
   display: flex
   align-items: center
   justify-content: center
-.indicator
-  margin: 0 !important
+.icon
   color: $light-font-color
   height: 30px
   width: 30px
@@ -160,11 +173,8 @@ p
   flex-direction: column
   justify-content: center
   align-items: center
-  color: $indicator-font-color !important
+  color: $indicator-font-color
   font-size: 0.8em
-.icon
-  color: $light-font-color
-  margin: 0 6px
   &.icon-play:before
     content: "\\ea1c"
   &.icon-done:before
@@ -194,4 +204,8 @@ footer
 			font-weight: 700
   a
     color: $light-font-color
+
+  .icon
+    color: $light-font-color
+    margin: 0 6px
 
