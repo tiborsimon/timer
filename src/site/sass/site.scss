@@ -11,7 +11,7 @@ html, body {
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   box-sizing: border-box;
-  background: radial-gradient(circle at top,$color-dark,#062329 60%);
+  background: radial-gradient(circle at top,$color-dark,#062329 65%);
   color: $color-light;
   padding: 40px;
   h1 {
@@ -62,9 +62,6 @@ button:active {
 
 
 #wrapper {
-  margin: 20px auto;
-  transition: margin 1.2s;
-  transition-timing-function: ease-out;
   max-width: 400px;
   text-align: center;
   .timer {

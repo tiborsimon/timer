@@ -1,12 +1,13 @@
 'use strict';
 function loaderDone(event) {
-  document.getElementById("loader").style.opacity = 0;
+  var loader = document.getElementById("loader");
+  loader.style.opacity = 0;
   setTimeout(function(){
-    document.getElementById("wrapper").style.marginTop = 0;
-    var loaderDiv = document.getElementById("page-loader");
-    loaderDiv.style.opacity = 0;
+    var wrapper = document.getElementById("wrapper");
+    wrapper.style.marginTop = 0;
+    wrapper.style.opacity = 1;
     setTimeout(function(){
-      loaderDiv.style.display = "none";
+      loader.style.display = "none";
     }, 800);
   }, 300);
 }
