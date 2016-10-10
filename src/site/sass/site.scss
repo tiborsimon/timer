@@ -1,9 +1,3 @@
-// http://colorhunt.co/c/39614
-$color-dark: #354D62;
-$color-faded-dark: #59748C;
-$color-faded-light: #718CA1;
-$color-light: #D7F2F7;
-
 html, body {
   height: 100%;
 }
@@ -120,23 +114,6 @@ button:active {
   }
 }
 
-@font-face {
-  font-family: 'icomoon';
-  src: url('fonts/icomoon.woff?7anle0') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-}
-
 .icons {
   margin-top: 10px;
   flex-direction: row;
@@ -152,26 +129,4 @@ button:active {
   font-size: 0.8em;
   top: 7px;
   left: 7px;
-}
-.icon {
-  color: $color-faded-light;
-  margin: 0 6px;
-  &.icon-play:before {
-    content: "\\ea1c";
-  }
-  &.icon-done:before {
-    content: "\\ea10";
-  }
-  &.icon-pause:before {
-    content: "\\ea1d";
-  }
-  &.icon-share:before {
-    content: "\\ea82";
-  }
-  &.icon-github:before {
-    content: "\\eab0";
-  }
-  &.icon-books:before {
-    content: "\\e920";
-  }
 }

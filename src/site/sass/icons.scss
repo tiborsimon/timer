@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.woff?7anle0') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.icon {
+  color: $color-faded-light;
+  margin: 0 6px;
+  &.icon-play:before {
+    content: "\\ea1c";
+  }
+  &.icon-done:before {
+    content: "\\ea10";
+  }
+  &.icon-pause:before {
+    content: "\\ea1d";
+  }
+  &.icon-share:before {
+    content: "\\ea82";
+  }
+  &.icon-github:before {
+    content: "\\eab0";
+  }
+  &.icon-books:before {
+    content: "\\e920";
+  }
+}
