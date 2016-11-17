@@ -21,7 +21,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/docs/",
+    path: __dirname + "/build/",
     filename: "app.min.js"
   },
   devServer : {

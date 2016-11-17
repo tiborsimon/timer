@@ -1,4 +1,4 @@
-OUTPUT:=docs
+OUTPUT:=build
 NODE:=./node_modules/.bin/
 
 .PHONY: all clean css asset html webpack
@@ -22,11 +22,10 @@ css:
 	} | \
 	$(NODE)postcss --use autoprefixer | \
 	$(NODE)cleancss | \
-	sed "s#/\*.*\*/##g" > docs/site.min.css
+	sed "s#/\*.*\*/##g" > $(OUTPUT)/site.min.css
 
 asset:
 	@echo "Copying assets.."
-	@cp ./src/site/asset/* ./$(OUTPUT)/asset/
 	@cp ./src/site/fonts/* ./$(OUTPUT)/fonts/
 
 html: css
