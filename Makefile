@@ -1,5 +1,7 @@
 OUTPUT:=build
 NODE:=./node_modules/.bin/
+BASEURL:=http://localhost:8000
+APPPATH:=timer
 
 .PHONY: all clean css asset html webpack
 
@@ -30,7 +32,8 @@ asset:
 
 html: css
 	@echo "Minifying html files.."
-	@sed 's~CSS~$(shell cat $(OUTPUT)/site.min.css)~' ./src/site/index.html | \
+	@cat ./src/site/index.html | \
+	sed 's~CSS~$(shell cat $(OUTPUT)/site.min.css)~' | \
 	sed 's?JS?$(shell cat ./src/site/js/site-loader.js | $(NODE)uglifyjs)?' | \
 	$(NODE)html-minifier --collapse-whitespace -o ./$(OUTPUT)/index.html
 	@rm -rf $(OUTPUT)/site.min.css
